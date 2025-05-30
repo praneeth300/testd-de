@@ -1,0 +1,9 @@
+huggingface_hub
+xgboost
+datasets
+pandas
+scikit-learn
+mlflow
+flask
+uvicorn[standard]
+gunicorn
