@@ -104,7 +104,7 @@ print(classification_report(ytest, y_pred_test))
 joblib.dump(best_model, "best_churn_model.joblib")
 
 api.upload_file(
-    path_or_fileobj="bestchurn_model.joblib",
+    path_or_fileobj="best_churn_model.joblib",
     path_in_repo="best_churn_model.joblib",
     repo_id="praneeth232/churn-model",
     repo_type="model",
