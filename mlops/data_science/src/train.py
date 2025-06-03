@@ -12,7 +12,7 @@ import joblib
 # for creating a folder
 import os
 # for hugging face space authentication to upload files
-from huggingface_hub import login, HfApi
+from huggingface_hub import login, HfApi, create_repo
 
 api = HfApi()
 
@@ -102,6 +102,10 @@ print(classification_report(ytest, y_pred_test))
 
 # Save best model
 joblib.dump(best_model, "best_churn_model.joblib")
+
+create_repo("churn-model",  # Your model repo name
+            repo_type="model",  # Specify this is a model
+            private=False)  # Set to True if it should be private
 
 api.upload_file(
     path_or_fileobj="best_churn_model.joblib",
